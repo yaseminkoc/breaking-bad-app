@@ -1,16 +1,31 @@
 import './App.css';
 import React from "react";
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 //pages
 import Home from './pages/Home';
+import Detail from './pages/Details';
+import Quotes from './pages/Quotes';
 function App() {
   return (
     <Router>
+      <nav>
+          <ul>
+            <li>
+              <Link to="/">Characters</Link>
+            </li>
+            <li>
+              <Link to="/quotes">Quotes</Link>
+            </li>
+
+          </ul>
+        </nav>
     <div>
 
       {/* 👇️ Wrap your Route components in a Routes component */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/char/:char_id" element={<Detail />} />
+        <Route path="/char/quotes" element={<Quotes />} />
       </Routes>
     </div>
   </Router>
