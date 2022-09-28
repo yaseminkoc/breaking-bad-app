@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/char/:char_id" element={<Detail />} />
-        <Route path="/char/quotes" element={<Quotes />} />
+        <Route path="/quotes" element={<Quotes />} />
       </Routes>
     </div>
   </Router>
